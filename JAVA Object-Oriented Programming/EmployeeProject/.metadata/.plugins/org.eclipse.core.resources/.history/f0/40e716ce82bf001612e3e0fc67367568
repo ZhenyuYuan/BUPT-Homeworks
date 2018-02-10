@@ -1,0 +1,18 @@
+package homework3;
+
+public abstract class Employee {
+	private String firstName;
+	private String lastName;
+	private String socialSecurityNumber;
+	public Employee(String inFirstName, String inLastName, String inSocialSecurityNumber)
+	{
+		firstName = inFirstName;
+		lastName = inLastName;
+		socialSecurityNumber = inSocialSecurityNumber;
+	}
+	public void setFirstName(String inFirstName)
+	{
+		firstName = inFirstName;
+	}
+	abstract public double earning(); 
+}

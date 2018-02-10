@@ -1,0 +1,68 @@
+package homework4;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class InputComEmpInfoWin extends JDialog implements ActionListener{
+	//private JFrame frame;
+	
+	private JPanel hintPanel = new JPanel();
+	private JPanel firstnamePanel = new JPanel();
+	private JPanel lastnamePanel = new JPanel();
+	private JPanel sociaSecNumPanel = new JPanel();
+	private JPanel grossSalesPanel = new JPanel();
+	private JPanel comRatePanel = new JPanel();
+	
+	//private JLabel firstnamel = new JLabel("Firstname:");
+	//private JLabel lastnamel = new JLabel("Lastname:");
+	//private JLabel socialSecl = new JLabel("SocialSecurityNumber:");
+	//private JLabel grossSalesl = new JLabel("GrossSales:");
+	//private JLabel commissionRatel = new JLabel("CommissionRate:");
+	//private JTextField firstnameText = new JTextField(50);
+	//private JTextField lastnameText = new JTextField(50);	
+	//private JTextField socialSecurityNumberText = new JTextField(50);
+	//private JTextField grossSalesText = new JTextField(50);
+	//private JTextField commissionRateText = new JTextField(50);
+	//private JButton save = new JButton("Save");		      
+	//private JButton cancel = new JButton("Canel");
+    
+	
+	
+	InputComEmpInfoWin(MainWindow parent, boolean modal){
+		
+	    setTitle("Input Commission employee information");
+	    
+	    hintPanel.setBackground(Color.LIGHT_GRAY); 
+	    firstnamePanel.setBackground(Color.LIGHT_GRAY); 
+		lastnamePanel.setBackground(Color.LIGHT_GRAY);
+		sociaSecNumPanel.setBackground(Color.LIGHT_GRAY);
+		grossSalesPanel.setBackground(Color.LIGHT_GRAY);
+		comRatePanel.setBackground(Color.LIGHT_GRAY);
+	    
+		getContentPane().setLayout(new GridLayout(6,1));
+		getContentPane().add(hintPanel);
+		getContentPane().add(firstnamePanel);
+		getContentPane().add(lastnamePanel);
+		getContentPane().add(sociaSecNumPanel);
+		getContentPane().add(grossSalesPanel);
+		getContentPane().add(comRatePanel);
+		//choose settings for the frame and make it visible
+	  	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	  	setSize(600,400);
+	  	setVisible(true);
+	}
+	
+
+
+	
+
+}

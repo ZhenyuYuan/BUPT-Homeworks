@@ -1,0 +1,13 @@
+package homework3;
+
+public class SalaridEmployee extends Employee{
+	private double weeklySalary;
+	public SalaridEmployee(String inFirstName, String inLastName, String inSocialSecurityNumber, double inWeeklySalary) {
+		super(inFirstName, inLastName, inSocialSecurityNumber);
+		weeklySalary = inWeeklySalary;
+	}
+	public double earning()
+	{
+		return weeklySalary*4;
+	}
+}

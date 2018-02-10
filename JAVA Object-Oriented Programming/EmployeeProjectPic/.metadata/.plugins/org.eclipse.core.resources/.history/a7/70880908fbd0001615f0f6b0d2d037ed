@@ -1,0 +1,39 @@
+package homework4;
+
+import java.awt.EventQueue;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class InputComEmpInfoWin extends JDialog implements ActionListener{
+	private JFrame frame;
+	private JLabel firstnamel = new JLabel("Firstname:");
+	private JLabel lastnamel = new JLabel("Lastname:");
+	private JLabel socialSecurityNumber = new JLabel("SocialSecurityNumber:");
+	private JLabel grossSales = new JLabel("GrossSales:");
+	private JLabel commissionRate = new JLabel("CommissionRate:");
+	private JTextField firstnameText = new JTextField(50);
+	private JTextField lastnameText = new JTextField(50);	
+	private JTextField socialSecurityNumberText = new JTextField(50);
+	private JTextField grossSalesText = new JTextField(50);
+	private JTextField commissionRateText = new JTextField(50);
+	private JButton save = new JButton("Save");		      
+	private JButton cancel = new JButton("Canel");
+    
+	InputComEmpInfoWin(MainWindow parent, boolean modal){
+		
+	    //choose settings for the frame and make it visible
+	  	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	  	setSize(600,400);
+	  	setVisible(true);
+	}
+	
+
+
+	
+
+}

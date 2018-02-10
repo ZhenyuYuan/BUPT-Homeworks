@@ -1,0 +1,76 @@
+package homework3;
+
+import java.util.Scanner;
+
+public class EmployeeTest {
+	private static Scanner sc;
+	public static void main(String[] args){
+		String FirstName;
+		String LastName;
+		String SocialSecurityNumber;
+		EmployeeList empList;
+		empList = new EmployeeList();
+		for(int i = 0; i <= 9; i++){
+			int type = (int)(Math.random()*4);
+			sc = new Scanner(System.in);
+			switch(type){
+			case 1:
+				System.out.println("[SalaridEmployee] Please input FirstName, LastName, SocialSecurityNumber, weeklySalary:");
+				double WeeklySalary;
+				FirstName = sc.nextLine();
+				LastName = sc.nextLine();
+				SocialSecurityNumber = sc.nextLine();
+				WeeklySalary = sc.nextDouble();
+				SalaridEmployee semp;
+				semp = new SalaridEmployee(FirstName, LastName, SocialSecurityNumber, WeeklySalary);
+				empList.Add(semp);
+				break;
+			case 2:
+				System.out.println("[CommissionEmployee] Please input FirstName, LastName, SocialSecurityNumber, grossSales and commissionRate:");
+				double GrossSales;			//销售额
+				double CommissionRate;		//提成比率
+				FirstName = sc.nextLine();
+				LastName = sc.nextLine();
+				SocialSecurityNumber = sc.nextLine();
+				GrossSales = sc.nextDouble(); 	
+				CommissionRate = sc.nextDouble();
+				CommissionEmployee cemp;
+				cemp = new CommissionEmployee(FirstName, LastName, SocialSecurityNumber, GrossSales, CommissionRate);
+				empList.Add(cemp);
+				break;
+			case 3:
+				System.out.println("[BasePlusCommissionEmployee] Please input FirstName, LastName, SocialSecurityNumber, grossSales, commissionRate, baseSalary:");
+				double GrossSales1;		//销售额
+				double CommissionRate1;	//提成比率
+				double BaseSalary;		//月基本工资
+				FirstName = sc.nextLine();
+				LastName = sc.nextLine();
+				SocialSecurityNumber = sc.nextLine();
+				GrossSales1 = sc.nextDouble();
+				CommissionRate1 = sc.nextDouble();
+				BaseSalary = sc.nextDouble();	
+				BasePlusCommissionEmployee bcemp;
+				bcemp = new BasePlusCommissionEmployee(FirstName, LastName, SocialSecurityNumber, GrossSales1, CommissionRate1, BaseSalary);
+				empList.Add(bcemp);
+				break;
+			case 4:
+				System.out.println("[HourlyEmployee] Please input FirstName, LastName, SocialSecurityNumber, wage and hours:");
+				double Wage;    //每小时的工钱
+				double Hours;	//月工作小时数
+				FirstName = sc.nextLine();
+				LastName = sc.nextLine();
+				SocialSecurityNumber = sc.nextLine();
+				Wage = sc.nextDouble(); 	
+				Hours = sc.nextDouble();
+				HourlyEmployee hemp;
+				hemp = new HourlyEmployee(FirstName, LastName, SocialSecurityNumber, Wage, Hours);
+				empList.Add(hemp);
+				break;
+			}
+		}
+		System.out.println("---------Employees' information:---------");
+		for(int i = 0; empList.getTotal()>0 && i <= empList.getTotal()-1; i++){
+			empList.getItem(i).toString();
+		}
+	}
+}

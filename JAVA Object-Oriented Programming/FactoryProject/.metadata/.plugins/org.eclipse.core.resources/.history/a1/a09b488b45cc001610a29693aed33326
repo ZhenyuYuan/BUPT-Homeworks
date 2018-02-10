@@ -1,0 +1,135 @@
+package homework5;
+
+import java.util.*;
+import java.util.Random;
+
+public class _14211529_‘¨’Ò”Ó_5_Factory {
+	private HashMap<String, _14211529_‘¨’Ò”Ó_5_Employee> employees;
+	public _14211529_‘¨’Ò”Ó_5_Factory(){
+		employees = new HashMap<String, _14211529_‘¨’Ò”Ó_5_Employee>();
+	}
+	
+	public void initEmployee(){
+		_14211529_‘¨’Ò”Ó_5_Employee[] emp;
+		String FirstName;
+		String LastName; 
+		String SocialSecurityNumber;
+		int NUM = 10;  		//ÀÊª˙µƒπ§»À ˝
+		emp = new _14211529_‘¨’Ò”Ó_5_Employee[NUM];
+
+		
+		for(int i = 0; i < NUM; i++){
+			Scanner sc = new Scanner(System.in);
+			Random random = new Random();
+			int type = random.nextInt(100)%4;
+			System.out.println("Input employee information(end by '0000'):");
+			System.out.println("Please input socialSecurityNumber:");
+			SocialSecurityNumber = sc.nextLine();
+			if(SocialSecurityNumber.equals("0000")){
+				System.out.println("Stop inputting");
+				i =  NUM;
+			}
+			else{
+				switch(type){
+				case 1:
+					System.out.println("[SalaridEmployee] Please input FirstName, LastName, weeklySalary:");
+					double WeeklySalary;
+					FirstName = sc.nextLine();
+					LastName = sc.nextLine();
+					WeeklySalary = sc.nextDouble();
+					emp[i] = new _14211529_‘¨’Ò”Ó_5_SalaridEmployee(FirstName, LastName, SocialSecurityNumber, WeeklySalary);
+					employees.put(emp[i].getSocialSecurityNumber(), emp[i]);
+					break;
+				case 2:
+					System.out.println("[CommissionEmployee] Please input FirstName, LastName, grossSales and commissionRate:");
+					double GrossSales;			//œ˙ €∂Ó
+					double CommissionRate;		//Ã·≥…±»¬ 
+					FirstName = sc.nextLine();
+					LastName = sc.nextLine();
+					GrossSales = sc.nextDouble(); 	
+					CommissionRate = sc.nextDouble();
+					emp[i] = new _14211529_‘¨’Ò”Ó_5_CommissionEmployee(FirstName, LastName, SocialSecurityNumber, GrossSales, CommissionRate);
+					employees.put(emp[i].getSocialSecurityNumber(), emp[i]);
+					break;
+				case 3:
+					System.out.println("[BasePlusCommissionEmployee] Please input FirstName, LastName, grossSales, commissionRate, baseSalary:");
+					double GrossSales1;		//œ˙ €∂Ó
+					double CommissionRate1;	//Ã·≥…±»¬ 
+					double BaseSalary;		//‘¬ª˘±æπ§◊ 
+					FirstName = sc.nextLine();
+					LastName = sc.nextLine();
+					GrossSales1 = sc.nextDouble();
+					CommissionRate1 = sc.nextDouble();
+					BaseSalary = sc.nextDouble();	
+					emp[i] = new _14211529_‘¨’Ò”Ó_5_BasePlusCommissionEmployee(FirstName, LastName, SocialSecurityNumber, GrossSales1, CommissionRate1, BaseSalary);
+					employees.put(emp[i].getSocialSecurityNumber(), emp[i]);
+					break;
+				case 4:
+					System.out.println("[HourlyEmployee] Please input FirstName, LastName,wage and hours:");
+					double Wage;    //√ø–° ±µƒπ§«Æ
+					double Hours;	//‘¬π§◊˜–° ± ˝
+					FirstName = sc.nextLine();
+					LastName = sc.nextLine();
+					Wage = sc.nextDouble(); 	
+					Hours = sc.nextDouble();
+					emp[i] = new _14211529_‘¨’Ò”Ó_5_HourlyEmployee(FirstName, LastName, SocialSecurityNumber, Wage, Hours);
+					employees.put(emp[i].getSocialSecurityNumber(), emp[i]);
+					break;
+				}
+			}
+		}
+	}
+	
+	public _14211529_‘¨’Ò”Ó_5_Employee getEmployee(String empSecNum){
+		if(employees.containsKey(empSecNum)){
+			_14211529_‘¨’Ò”Ó_5_Employee e = (_14211529_‘¨’Ò”Ó_5_Employee)employees.get(empSecNum);
+			return e;
+		}
+		else{
+			return null;
+		}
+	}
+	
+	public  _14211529_‘¨’Ò”Ó_5_Employee deleteEmployee(String empSecNum){
+		if(employees.containsKey(empSecNum)){
+			employees.remove(empSecNum);
+			_14211529_‘¨’Ò”Ó_5_Employee e = (_14211529_‘¨’Ò”Ó_5_Employee)employees.get(empSecNum);
+			return e;
+		}
+		else{
+			return null;
+		}
+	}
+	
+	public _14211529_‘¨’Ò”Ó_5_Employee addEmployee(_14211529_‘¨’Ò”Ó_5_Employee emp){
+		if(!employees.containsKey(emp)){
+			employees.put(emp.getSocialSecurityNumber(), emp);
+			return emp;
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	public _14211529_‘¨’Ò”Ó_5_Employee updateEmployee(String empSecNum, _14211529_‘¨’Ò”Ó_5_Employee emp){
+		if(employees.containsKey(empSecNum)){
+			employees.put(empSecNum, emp);
+			return emp;
+		}
+		else{
+			return null;
+		}
+	}
+	
+	public void printEmployees(){
+		 Set<String> keySet = employees.keySet();  
+	     for(Iterator<String> iterator = keySet.iterator(); iterator.hasNext();){  
+	          String key = iterator.next();  
+	              
+	          _14211529_‘¨’Ò”Ó_5_Employee value = (_14211529_‘¨’Ò”Ó_5_Employee)employees.get(key);  
+	          
+	          System.out.println(value.toString());
+	     }  
+	}
+}

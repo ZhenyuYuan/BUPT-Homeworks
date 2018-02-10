@@ -1,0 +1,10 @@
+package homework3;
+
+import java.util.Scanner;
+
+public class EmployeeTest {
+	private static Scanner sc;
+	public static void main(String[] args){
+		
+	}
+}

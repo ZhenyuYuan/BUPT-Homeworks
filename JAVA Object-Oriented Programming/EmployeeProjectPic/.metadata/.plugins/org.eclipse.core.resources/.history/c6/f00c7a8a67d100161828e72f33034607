@@ -1,0 +1,166 @@
+package homework4;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+@SuppressWarnings("serial")
+public class InputComInfoWin extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+	private JTextField txtFirstname;
+	private JTextField txtLastname;
+	private JTextField txtSocialsecuritynumber;
+	private JTextField txtGrosssales;
+	private JTextField txtCommissionrate;
+
+	/**
+	 * Launch the application.
+	 */
+	/*public static void main(String[] args) {
+		try {
+			InputComInfoWin dialog = new InputComInfoWin();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	*/
+	/**
+	 * Create the dialog.
+	 */
+	public InputComInfoWin() {
+		setTitle("Employee system: Create a CommissionEmployee");
+		setBounds(100, 100, 450, 300);
+		//getContentPane().setLayout(new BorderLayout());
+		//contentPanel.setLayout(new FlowLayout());
+		//contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		JPanel hintPane = new JPanel();
+		hintPane.setBounds(1, 0, 432, 29);
+		JPanel fnamePane = new JPanel();
+		fnamePane.setBounds(1, 30, 432, 37);
+		JPanel lnamePane = new JPanel();
+		lnamePane.setBounds(1, 69, 432, 37);
+		JPanel socialSecNumPane = new JPanel();
+		socialSecNumPane.setBounds(1, 106, 432, 40);
+		JPanel grossSalePane= new JPanel();
+		grossSalePane.setBounds(1, 144, 432, 40);
+		JPanel comRatePane = new JPanel();
+		comRatePane.setBounds(1, 184, 432, 40);
+		JPanel buttonPane = new JPanel();
+		buttonPane.setBounds(1, 221, 432, 40);
+		getContentPane().setLayout(null);
+		getContentPane().add(hintPane);
+		hintPane.setLayout(null);
+		
+		JLabel lblPleaseInputInformation = new JLabel("Please input information of CommissionEmployee you want to create:");
+		lblPleaseInputInformation.setBounds(10, 10, 412, 15);
+		hintPane.add(lblPleaseInputInformation);
+		getContentPane().add(fnamePane);
+		
+		JLabel lblFirstname = new JLabel("Firstname:");
+		fnamePane.add(lblFirstname);
+		
+		txtFirstname = new JTextField();
+		txtFirstname.setText("Firstname");
+		fnamePane.add(txtFirstname);
+		txtFirstname.setColumns(10);
+		getContentPane().add(lnamePane);
+		
+		JLabel lblLastname = new JLabel("Lastname:");
+		lnamePane.add(lblLastname);
+		
+		txtLastname = new JTextField();
+		txtLastname.setText("Lastname");
+		lnamePane.add(txtLastname);
+		txtLastname.setColumns(10);
+		getContentPane().add(socialSecNumPane);
+		socialSecNumPane.setLayout(null);
+		
+		JLabel lblSocialsecutitynumber = new JLabel("SocialSecutityNumber:");
+		lblSocialsecutitynumber.setBounds(57, 10, 149, 15);
+		socialSecNumPane.add(lblSocialsecutitynumber);
+		
+		txtSocialsecuritynumber = new JTextField();
+		txtSocialsecuritynumber.setBounds(188, 7, 140, 21);
+		txtSocialsecuritynumber.setText("SocialSecurityNumber");
+		socialSecNumPane.add(txtSocialsecuritynumber);
+		txtSocialsecuritynumber.setColumns(10);
+		getContentPane().add(grossSalePane);
+		grossSalePane.setLayout(null);
+		
+		JLabel lblGrosssales = new JLabel("GrossSales:");
+		lblGrosssales.setBounds(114, 8, 74, 15);
+		grossSalePane.add(lblGrosssales);
+		
+		txtGrosssales = new JTextField();
+		txtGrosssales.setBounds(188, 5, 74, 21);
+		txtGrosssales.setText("GrossSales");
+		grossSalePane.add(txtGrosssales);
+		txtGrosssales.setColumns(10);
+		getContentPane().add(comRatePane);
+		comRatePane.setLayout(null);
+		
+		JLabel lblCommissionrate = new JLabel("CommissionRate:");
+		lblCommissionrate.setBounds(77, 8, 110, 15);
+		comRatePane.add(lblCommissionrate);
+		
+		txtCommissionrate = new JTextField();
+		txtCommissionrate.setBounds(186, 5, 110, 21);
+		txtCommissionrate.setText("CommissionRate");
+		comRatePane.add(txtCommissionrate);
+		txtCommissionrate.setColumns(10);
+		getContentPane().add(buttonPane);
+		buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		getContentPane().add(buttonPane, BorderLayout.SOUTH);
+		{
+			JButton okButton = new JButton("OK");
+			okButton.setActionCommand("OK");
+			buttonPane.add(okButton);
+			getRootPane().setDefaultButton(okButton);
+		}
+		{
+			JButton cancelButton = new JButton("Cancel");
+			cancelButton.setActionCommand("Cancel");
+			buttonPane.add(cancelButton);
+		}
+		/*getContentPane().add(contentPanel, BorderLayout.CENTER);
+		{
+			JPanel hintPane = new JPanel();
+			JPanel fnamePane = new JPanel();
+			JPanel lnamePane = new JPanel();
+			JPanel socialSecNumPane = new JPanel();
+			//JPanel Pane = new JPanel();
+			//JPanel fnamePane = new JPanel();
+			setLayout(new GridLayout(3,1));
+			getContentPane().add(fnamePane);
+			getContentPane().add(lnamePane);
+			getContentPane().add(socialSecNumPane);
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("OK");
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+		}*/
+		
+	}
+}
+

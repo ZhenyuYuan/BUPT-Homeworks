@@ -1,0 +1,33 @@
+package homework4;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+//socialSecurityNumber, double grossSales, double commissionRate
+public class InputComEmpInfoWin extends JDialog implements ActionListener{
+	InputComEmpInfoWin(MainWindow parent, boolean modal){
+		JLabel firstnamel = new JLabel("Firstname:");
+	    JLabel lastnamel = new JLabel("Lastname:");
+	    JLabel socialSecurityNumber = new JLabel("SocialSecurityNumber:");
+	    JLabel grossSales = new JLabel("GrossSales:");
+	    JLabel commissionRate = new JLabel("CommissionRate:");
+	    JTextField firstnameText = new JTextField(50);
+	    JTextField lastnameText = new JTextField(50);	
+	    JTextField socialSecurityNumberText = new JTextField(50);
+	    JTextField grossSalesText = new JTextField(50);
+	    JTextField commissionRateText = new JTextField(50);
+	    JButton save = new JButton("Save");		      
+	    JButton cancel = new JButton("Canel");
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}

@@ -1,0 +1,5 @@
+package homework6;
+
+public enum BookType {
+	NONCOMPUTER, TEXTBOOK, COMIC, HEALTH, OTHER, NOTEXIST
+}

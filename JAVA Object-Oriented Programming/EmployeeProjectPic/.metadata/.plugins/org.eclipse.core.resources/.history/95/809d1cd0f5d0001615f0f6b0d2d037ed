@@ -1,0 +1,62 @@
+package homework4;
+
+import java.awt.EventQueue;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class InputComEmpInfoWin extends JDialog implements ActionListener{
+	InputComEmpInfoWin(MainWindow parent, boolean modal){
+		JLabel firstnamel = new JLabel("Firstname:");
+	    JLabel lastnamel = new JLabel("Lastname:");
+	    JLabel socialSecurityNumber = new JLabel("SocialSecurityNumber:");
+	    JLabel grossSales = new JLabel("GrossSales:");
+	    JLabel commissionRate = new JLabel("CommissionRate:");
+	    JTextField firstnameText = new JTextField(50);
+	    JTextField lastnameText = new JTextField(50);	
+	    JTextField socialSecurityNumberText = new JTextField(50);
+	    JTextField grossSalesText = new JTextField(50);
+	    JTextField commissionRateText = new JTextField(50);
+	    JButton save = new JButton("Save");		      
+	    JButton cancel = new JButton("Canel");
+
+	}
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					InputComEmpInfoWin window = new InputComEmpInfoWin1();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public InputComEmpInfoWin1() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}

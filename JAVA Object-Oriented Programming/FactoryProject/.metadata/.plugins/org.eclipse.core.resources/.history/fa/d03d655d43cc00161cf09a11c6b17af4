@@ -1,0 +1,127 @@
+package homework5;
+
+public class FactoryTest {
+	public static void main(String[] args) {
+		int key=0;
+		String first_Name,last_Name,socialSecurity_Number;
+		_2014211523_卢利峰_5_factory work = new _2014211523_卢利峰_5_factory();
+		_2014211523_卢利峰_5_Employee tem0;
+		work.initEmployees();
+		Scanner sc = new Scanner(System.in);
+		
+		for(int j=1;j==1;)
+		{
+			System.out.println("菜单:");
+			System.out.println("1:查询员工  2:更新信息");
+			System.out.println("3:删除员工  4:打印信息");
+			System.out.println("0:exit");
+			key = sc.nextInt();
+			switch (key){
+				case 1:
+					System.out.println("输入要查询的员工社会保险号:");
+					socialSecurity_Number =sc.next();
+					tem0 = work.getEmployee(socialSecurity_Number);
+					if(tem0 ==null){
+						System.out.println("该员工不存在！！！！！！");
+					}
+					else{
+						System.out.println("姓名："+tem0.firstName+tem0.lastName);
+						System.out.println("社会保险号："+tem0.socialSecurityNumber);
+						System.out.println("工资："+tem0.toSting());
+						System.out.println("****************");
+					}
+					break;
+				case 2:
+					System.out.println("输入要更新的员工社会保险号:");  
+					socialSecurity_Number =sc.next();
+					tem0 = work.getEmployee(socialSecurity_Number);
+					if(tem0 ==null){
+						System.out.println("该员工不存在！！！！！！");
+					}
+					else{
+					System.out.println("更改firstName:"); 
+					first_Name =sc.next();
+					
+					System.out.println("更改lastName:");  
+					last_Name =sc.next();
+					
+					int key_j =0;
+					System.out.println("输入要更新的员工类型:");  
+					System.out.println("1：SalaridEmployee  2：CommisionEmployee");  
+					System.out.println("3：HourlyEmployee   4：BasePlusCommisionEmployee");  
+					key_j =sc.nextInt();
+					_2014211523_卢利峰_5_Employee temp;
+					switch (key_j){
+					case 1:
+						System.out.println("员工类型：SalaridEmployee");
+						temp=new _2014211523_卢利峰_5_SalaridEmployee(first_Name,last_Name,socialSecurity_Number);
+						System.out.print("请输入：weeklySalary：");
+						((_2014211523_卢利峰_5_SalaridEmployee)temp).set_weeklySalary(sc.nextFloat());
+						work.updateEmployee(socialSecurity_Number, temp);
+						break;
+					case 2:
+						System.out.println("员工类型：CommisionEmployee");
+						temp=new _2014211523_卢利峰_5_CommisionEmployee(first_Name,last_Name,socialSecurity_Number);
+						System.out.print("请输入grossSales：");
+						((_2014211523_卢利峰_5_CommisionEmployee)temp).set_grossSales(sc.nextFloat());
+						System.out.print("请输入commissionRate：");
+						((_2014211523_卢利峰_5_CommisionEmployee)temp).set_commissionRate(sc.nextFloat());
+						work.updateEmployee(socialSecurity_Number, temp);
+						break;
+					case 3:
+						System.out.println("员工类型：HourlyEmployee");
+						temp=new _2014211523_卢利峰_5_HourlyEmployee(first_Name,last_Name,socialSecurity_Number);
+						System.out.print("请输入wage：");
+						((_2014211523_卢利峰_5_HourlyEmployee)temp).set_wage(sc.nextFloat());
+						System.out.print("请输入hours：");
+						((_2014211523_卢利峰_5_HourlyEmployee)temp).set_hour(sc.nextFloat());
+						work.updateEmployee(socialSecurity_Number, temp);
+						break;
+					case 4:
+						System.out.println("员工类型:BasePlusCommisionEmployee");
+						temp=new _2014211523_卢利峰_5_BasePlusCommisionEmployee(first_Name,last_Name,socialSecurity_Number);
+						System.out.print("请输入grossSales：");
+						((_2014211523_卢利峰_5_BasePlusCommisionEmployee)temp).set_grossSales(sc.nextFloat());
+						System.out.print("请输入commissionRate：");
+						((_2014211523_卢利峰_5_BasePlusCommisionEmployee)temp).set_commissionRate(sc.nextFloat());
+						System.out.print("请输入baseSalary：");
+						((_2014211523_卢利峰_5_BasePlusCommisionEmployee)temp).set_baseSalary(sc.nextFloat());
+						work.updateEmployee(socialSecurity_Number, temp);
+						break;
+					default:
+						System.out.println("错误选择！！！！！！！");
+						break;
+					}
+					System.out.println("更新成功！！！！！！");
+					}
+					break;
+				case 3:
+					System.out.println("输入要删除的员工社会保险号:");  
+					socialSecurity_Number =sc.next();
+					tem0 = work.getEmployee(socialSecurity_Number);
+					if(tem0 ==null){
+						System.out.println("该员工不存在！！！！！！");
+					}
+					else{
+						work.deleteEmployee(socialSecurity_Number);
+						System.out.println("删除成功！！！！！！");
+					}
+					
+					break;
+				case 4:
+					System.out.println("员工信息如下:");  
+					work.printEmployees();
+					break;
+				case 0:
+					System.out.println("exit!!!!!!");  
+					j=0;
+					break;
+				default:
+					System.out.println("输入正确的选择:");  
+					break;
+			}
+		}
+	
+		sc.close();
+	}
+}

@@ -1,0 +1,20 @@
+1483365304333	Rename type 'inputComEmpInfoWin'
+1483365773839	Delete element
+1483366434083	Delete element
+1483366441429	Rename compilation unit 'InputComEmpInfoWin1.java'
+1483369803964	Delete element
+1483416879251	Encapsulate field 'emplist'
+1483428289976	Encapsulate field 'empList'
+1483428898106	Encapsulate field 'empList'
+1483429812121	Delete element
+1483431206105	Encapsulate field 'empList'
+1483431547771	Encapsulate field 'EmployeeNumber'
+1483431551772	Encapsulate field 'AverageEarning'
+1483443910271	Rename type 'AverageEarningWin'
+1483443919006	Rename type 'BasePlusCommissionEmployee'
+1483443928141	Rename type 'CommissionEmployee'
+1483443935632	Rename type 'Employee'
+1483443943145	Rename type 'EmployeeList'
+1483443950952	Rename type 'InputBaseComInfoWin'
+1483443959140	Rename type 'InputComInfoWin'
+1483443974636	Rename type 'MainWindow'

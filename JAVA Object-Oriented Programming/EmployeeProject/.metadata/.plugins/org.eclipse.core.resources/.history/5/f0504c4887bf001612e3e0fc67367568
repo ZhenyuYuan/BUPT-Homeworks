@@ -1,0 +1,15 @@
+package homework3;
+
+public class CommissionEmployee extends Employee{
+	private double grossSales;		//销售额
+	private double commissionRate;	//提成比率
+	public CommissionEmployee(String inFirstName, String inLastName, String inSocialSecurityNumber,double inGrossSales,	double inCommissionRate) {
+		super(inFirstName, inLastName, inSocialSecurityNumber);
+		grossSales = inGrossSales;	
+		commissionRate = inCommissionRate;
+	}
+	public double earning()
+	{
+		return grossSales*commissionRate;
+	}	
+}

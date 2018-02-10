@@ -1,0 +1,126 @@
+package homework5;
+
+import java.util.*;
+import java.util.Random;
+
+public class _14211529_袁振宇_5_Factory {
+	private HashMap<String, _14211529_袁振宇_5_Employee> employees;
+	public _14211529_袁振宇_5_Factory(){
+		employees = new HashMap<String, _14211529_袁振宇_5_Employee>();
+	}
+	
+	public void initEmployee(){
+		_14211529_袁振宇_5_Employee[] emp;
+		String FirstName;
+		String LastName; 
+		String SocialSecurityNumber;
+		int NUM = 10;  		//随机的工人数
+		emp = new _14211529_袁振宇_5_Employee[NUM];
+
+		Scanner sc = new Scanner(System.in);
+		for(int i = 0; i < NUM; i++){
+			Random random = new Random();
+			int type = random.nextInt(100)%4;
+			System.out.println("Input employee information(end by '0000'):");
+			System.out.println("Please input socialSecurityNumber:");
+			SocialSecurityNumber = sc.nextLine();
+			if(SocialSecurityNumber.equals("0000")){
+				System.out.println("Stop inputting");
+				i =  NUM;
+			}
+			else{
+				switch(type){
+				case 1:
+					System.out.println("[SalaridEmployee] Please input FirstName, LastName, weeklySalary:");
+					double WeeklySalary;
+					FirstName = sc.nextLine();
+					LastName = sc.nextLine();
+					WeeklySalary = sc.nextDouble();
+					emp[i] = new _14211529_袁振宇_5_SalaridEmployee(FirstName, LastName, SocialSecurityNumber, WeeklySalary);
+					employees.put(emp[i].getSocialSecurityNumber(), emp[i]);
+					break;
+				case 2:
+					System.out.println("[CommissionEmployee] Please input FirstName, LastName, grossSales and commissionRate:");
+					double GrossSales;			//销售额
+					double CommissionRate;		//提成比率
+					FirstName = sc.nextLine();
+					LastName = sc.nextLine();
+					GrossSales = sc.nextDouble(); 	
+					CommissionRate = sc.nextDouble();
+					emp[i] = new _14211529_袁振宇_5_CommissionEmployee(FirstName, LastName, SocialSecurityNumber, GrossSales, CommissionRate);
+					employees.put(emp[i].getSocialSecurityNumber(), emp[i]);
+					break;
+				case 3:
+					System.out.println("[BasePlusCommissionEmployee] Please input FirstName, LastName, grossSales, commissionRate, baseSalary:");
+					double GrossSales1;		//销售额
+					double CommissionRate1;	//提成比率
+					double BaseSalary;		//月基本工资
+					FirstName = sc.nextLine();
+					LastName = sc.nextLine();
+					GrossSales1 = sc.nextDouble();
+					CommissionRate1 = sc.nextDouble();
+					BaseSalary = sc.nextDouble();	
+					emp[i] = new _14211529_袁振宇_5_BasePlusCommissionEmployee(FirstName, LastName, SocialSecurityNumber, GrossSales1, CommissionRate1, BaseSalary);
+					employees.put(emp[i].getSocialSecurityNumber(), emp[i]);
+					break;
+				case 4:
+					System.out.println("[HourlyEmployee] Please input FirstName, LastName,wage and hours:");
+					double Wage;    //每小时的工钱
+					double Hours;	//月工作小时数
+					FirstName = sc.nextLine();
+					LastName = sc.nextLine();
+					Wage = sc.nextDouble(); 	
+					Hours = sc.nextDouble();
+					emp[i] = new _14211529_袁振宇_5_HourlyEmployee(FirstName, LastName, SocialSecurityNumber, Wage, Hours);
+					employees.put(emp[i].getSocialSecurityNumber(), emp[i]);
+					break;
+				}
+			}
+			sc.close();
+		}
+	}
+	public _14211529_袁振宇_5_Employee getEmployee(String empSecNum){
+		if(employees.containsKey(empSecNum)){
+			_14211529_袁振宇_5_Employee s = (_14211529_袁振宇_5_Employee)employees.get(empSecNum);
+			return s;
+		}
+		else{
+			return null;
+		}
+	}
+	
+	public  _14211529_袁振宇_5_Employee deleteEmployee(String empSecNum){
+		
+		if(employees.containsKey(empSecNum)){
+			employees.remove(empSecNum);
+			_14211529_袁振宇_5_Employee s = (_14211529_袁振宇_5_Employee)employees.get(empSecNum);
+			return s;
+		}
+		else{
+			return null;
+		}
+	}
+	
+	public _14211529_袁振宇_5_Employee addEmployee(_14211529_袁振宇_5_Employee stu){
+		if(!employees.containsKey(stu)){
+			employees.put(stu.socialSecurityNumber, stu);
+			return stu;
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	public _14211529_袁振宇_5_Employee updateEmployee(String empSecNum ,_14211529_袁振宇_5_Employee emp){
+		
+		if(employees.containsKey(empSecNum)){
+			employees.put(empSecNum, emp);
+			return emp;
+		}
+		else{
+			return null;
+		}
+	}
+	
+}

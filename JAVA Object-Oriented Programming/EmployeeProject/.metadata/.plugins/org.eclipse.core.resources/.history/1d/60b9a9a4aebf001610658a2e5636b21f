@@ -1,0 +1,69 @@
+package homework3;
+
+import java.util.Scanner;
+
+public class EmployeeTest {
+	private static Scanner sc;
+	public static void main(String[] args){
+		String FirstName;
+		String LastName;
+		String SocialSecurityNumber;
+		Employee emp;
+		EmployeeList empList;
+		empList = new EmployeeList();
+		for(int i = 0; i <= 9; i++){
+			int type = (int)(Math.random()*4);
+			sc = new Scanner(System.in);
+			System.out.println("Please input FirstName, LastName, SocialSecurityNumber:");
+			FirstName = sc.nextLine();
+			LastName = sc.nextLine();
+			SocialSecurityNumber = sc.nextLine();
+			switch(type){
+			case 1:
+				System.out.println("Please input weeklySalary:");
+				double WeeklySalary;
+				WeeklySalary = sc.nextDouble();
+				SalaridEmployee semp;
+				semp = new SalaridEmployee(FirstName, LastName, SocialSecurityNumber, WeeklySalary);
+				empList.Add(semp);
+				break;
+			case 2:
+				System.out.println("Please input grossSales and commissionRate:");
+				double GrossSales;			//销售额
+				double CommissionRate;		//提成比率
+				GrossSales = sc.nextDouble(); 	
+				CommissionRate = sc.nextDouble();
+				CommissionEmployee cemp;
+				cemp = new CommissionEmployee(FirstName, LastName, SocialSecurityNumber, GrossSales, CommissionRate);
+				empList.Add(cemp);
+				break;
+			case 3:
+				System.out.println("Please input grossSales, commissionRate, baseSalary:");
+				double GrossSales1;		//销售额
+				double CommissionRate1;	//提成比率
+				double BaseSalary;		//月基本工资
+				GrossSales1 = sc.nextDouble();
+				CommissionRate1 = sc.nextDouble();
+				BaseSalary = sc.nextDouble();	
+				BasePlusCommissionEmployee bcemp;
+				bcemp = new BasePlusCommissionEmployee(FirstName, LastName, SocialSecurityNumber, GrossSales1, CommissionRate1, BaseSalary);
+				empList.Add(bcemp);
+				break;
+			case 4:
+				System.out.println("Please input wage and hours:");
+				double Wage;    //每小时的工钱
+				double Hours;	//月工作小时数
+				Wage = sc.nextDouble(); 	
+				Hours = sc.nextDouble();
+				HourlyEmployee hemp;
+				hemp = new HourlyEmployee(FirstName, LastName, SocialSecurityNumber, Wage, Hours);
+				empList.Add(hemp);
+				break;
+			}
+		}
+		for(int i = 0; i <10; i++){
+			emp = empList.getItem(i);
+			emp.toString();
+		}
+	}
+}

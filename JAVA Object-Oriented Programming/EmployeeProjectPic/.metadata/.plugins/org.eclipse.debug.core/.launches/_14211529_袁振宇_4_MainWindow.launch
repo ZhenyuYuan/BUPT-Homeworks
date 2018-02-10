@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/EmployeeProjectPic/src/homework4/_14211529_袁振宇_4_MainWindow.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="homework4._14211529_袁振宇_4_MainWindow"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="EmployeeProjectPic"/>
+</launchConfiguration>

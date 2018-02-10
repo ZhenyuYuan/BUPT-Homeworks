@@ -1,0 +1,73 @@
+package homework4;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class MainWindow extends JFrame implements ActionListener{
+	//declare and create panel
+	private JPanel mainPanel = new JPanel();
+	//declare and create the top menu bar
+	private JMenuBar bar = new JMenuBar();
+	//declare and create two menus
+	private JMenu leftStripeMenu = new JMenu("EmployeeInforInput");
+	private JMenu rightStripeMenu = new JMenu("Search");
+	//declare and create each menu item
+	private JMenuItem ComEmpItem = new JMenuItem("CommisionEmployee");
+	private JMenuItem BasePlusComEmpItem = new JMenuItem("BasePlusCommisionEmployee");
+	private JMenuItem AvreageEarningSearchItem = new JMenuItem("AvreageEarningSearch");
+	
+	
+	
+	public MainWindow(){
+		setTitle("Employee Manager");
+		
+		//set each stripe to an innitail colour
+		mainPanel.setBackground(Color.LIGHT_GRAY);
+		
+		//add menu items to the botton stripe menu
+		leftStripeMenu.add(ComEmpItem);
+		leftStripeMenu.add(BasePlusComEmpItem);
+		rightStripeMenu.add(AvreageEarningSearchItem);
+		
+		//add the menus to the menu bar
+		bar.add(leftStripeMenu);
+		bar.add(rightStripeMenu);
+		
+		//add the menu bar to the frame
+		setJMenuBar(bar);
+		
+		//add listerners to each menu item
+		ComEmpItem.addActionListener(this);
+		BasePlusComEmpItem.addActionListener(this);
+		AvreageEarningSearchItem.addActionListener(this);
+		
+		//select a GridLayout
+		setLayout(new GridLayout(1,1));
+		
+		//add the panels to the frame
+		add(mainPanel);
+		
+		//choose settings for the frame and make it visible
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(600,400);
+		setVisible(true);
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		EmployeeList empList;
+		empList = new EmployeeList();
+		
+		if(e.getSource()==ComEmpItem){
+			mainPanel.setBackground(Color.blue);
+			
+			
+		}
+		else if(e.getSource()==BasePlusComEmpItem){
+			
+		}
+		else if(e.getSource()==AvreageEarningSearchItem){
+			
+		}
+	}

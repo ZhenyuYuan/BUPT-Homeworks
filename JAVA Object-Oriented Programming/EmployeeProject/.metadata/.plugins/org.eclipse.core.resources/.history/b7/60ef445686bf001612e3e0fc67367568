@@ -1,0 +1,15 @@
+package homework3;
+
+public class HourlyEmployee extends Employee{
+	private double wage;    //每小时的工钱
+	private double hours;	//月工作小时数
+	public HourlyEmployee(String inFirstName, String inLastName, String inSocialSecurityNumber, double inWage, double inHours) {
+		super(inFirstName, inLastName, inSocialSecurityNumber);
+		wage = inWage;
+		hours = inHours;
+	}
+	public double earning()
+	{
+		return wage* hours;
+	}
+}

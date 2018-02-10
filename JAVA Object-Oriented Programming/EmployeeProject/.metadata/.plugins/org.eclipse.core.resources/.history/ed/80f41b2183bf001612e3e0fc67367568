@@ -1,0 +1,9 @@
+package homework3;
+
+public class SalaridEmployee extends Employee{
+	private double weeklySalary;
+	public double earning()
+	{
+		return weeklySalary*4;
+	}
+}

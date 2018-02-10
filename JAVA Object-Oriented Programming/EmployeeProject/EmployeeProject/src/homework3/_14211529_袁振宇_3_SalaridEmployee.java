@@ -1,0 +1,27 @@
+package homework3;
+
+public class _14211529_‘¨’Ò”Ó_3_SalaridEmployee extends _14211529_‘¨’Ò”Ó_3_Employee{
+	private double weeklySalary;
+	public _14211529_‘¨’Ò”Ó_3_SalaridEmployee(String firstName, String lastName, String socialSecurityNumber, double weeklySalary) {
+		super(firstName, lastName, socialSecurityNumber);
+		this.weeklySalary = weeklySalary;
+	}
+	public double earning(){
+		return weeklySalary*4;
+	}
+	public void setWeeklySalary(double weeklySalary){
+		this.weeklySalary = weeklySalary;
+	}
+	public double getWeeklySalary(){
+		return weeklySalary;
+	}
+	public String toString(){
+		return getClass().getName()
+				+"[fistname="+getFirstName()
+				+", lastName="+getLastName()
+				+", socialSecurityNumber="+getSocialSecurityNumber()
+				+", weeklySalary="+getWeeklySalary()
+				+", monthlySalary="+earning()
+				+"]";
+	}
+}

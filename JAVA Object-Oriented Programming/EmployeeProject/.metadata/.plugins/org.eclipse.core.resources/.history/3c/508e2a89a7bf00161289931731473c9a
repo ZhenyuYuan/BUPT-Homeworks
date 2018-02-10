@@ -1,0 +1,20 @@
+package homework3;
+
+import java.util.Scanner;
+
+public class EmployeeTest {
+	private static Scanner sc;
+	public static void main(String[] args){
+		String FirstName;
+		String LastName;
+		String SocialSecurityNumber;
+		for(int i = 1; i <= 10; i++){
+			int type = (int)(Math.random()*4);
+			switch(type){
+			case 1:
+				break;
+			
+			}
+		}
+	}
+}
